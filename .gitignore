@@ -1,4 +1,7 @@
 .DS_Store
+.vscode/
+*.ipynb
+*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

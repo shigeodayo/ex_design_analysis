@@ -1,22 +1,76 @@
-# ex_design_analysis
+# Experimental Design and Analysis
 
 
-Install pyenv
-Install python 3.7.7 via pyenv
+## Environment
+- Python 3.7.7
+- pipenv, version 2018.11.26
 
-install pipenv
+## How to construct environment (optional)
 
-Install dependencies
+### 1. Install `pyenv`
+
 ```shell
-$pipenv install
+$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+$ pyenv --version
+pyenv 1.2.17
 ```
 
-Activate the virtual environment
+### 2. Install `Python 3.7.7` via pyenv
+
 ```shell
-$pipenv shell
+$ pyenv install 3.7.7
+$ pyenv local 3.7.7
+$ python --version
+Python 3.7.7
+$ pip --version
+pip 19.2.3 from /Users/{USERNAME}/.pyenv/versions/3.7.7/lib/python3.7/site-packages/pip (python 3.7)
 ```
 
-Deactivate the virtual environment
+### 3. Install `pipenv`
+
 ```shell
-$exit
+$ pip install --upgrade pip
+$ pip install pipenv
+pipenv, version 2018.11.26
+```
+
+## Install packages
+
+```shell
+$ pipenv install {PACKAGE}
+```
+
+## How to run python
+
+```shell
+$ pipenv run python {PYTHON_FILE_PATH} {ARGUMENTS}
+```
+
+## How to open jupyter notebook or lab
+
+```shell
+$ pipenv run jupyter {notebook or lab}
+```
+
+## Activate the virtual environment
+```shell
+$ pipenv shell
+```
+
+## Deactivate the virtual environment
+```shell
+$ exit
+```
+
+## How to convert jupyter notebook (.ipynb) to python (.py)
+```shell
+$ ipynb-py-convert hoge.ipynb hoge.py
+```
+
+## How to convert python (.py) to jupyter notebook (.ipynb)
+```shell
+$ ipynb-py-convert hoge.py hoge.ipynb
 ```
