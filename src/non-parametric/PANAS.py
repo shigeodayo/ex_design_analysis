@@ -65,15 +65,15 @@ print('{:.5f}'.format(p * 3))  # Bonferroni correction
 # %%
 # Smiley face vs Neutral face
 _, p = stats.wilcoxon(smile_neg, neutral_neg)
-print('{:.5f}'.format(p * 3))  # Bonferroni correction
+print('smile vs neutral: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # Neutral face vs Sad face
 _, p = stats.wilcoxon(neutral_neg, sad_neg)
-print('{:.5f}'.format(p * 3))  # Bonferroni correction
+print('neutral vs sad: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # Sad face vs Smiley face
 _, p = stats.wilcoxon(sad_neg, smile_neg)
-print('{:.5f}'.format(p * 3))  # Bonferroni correction
+print('sad vs smile: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # %%
 """
@@ -96,6 +96,5 @@ ax.set_ylim(10, 50)
 
 plt.savefig('PANAS.pdf')
 plt.show()
-
 
 # %%
