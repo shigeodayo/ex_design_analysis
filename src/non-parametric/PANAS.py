@@ -1,4 +1,10 @@
 # %%
+"""
+# Non-parametric analysis with repeated data (Friedman & Wilcoxon)
+Within-participant design (3 groups: smiley face, neutral face, sad face)
+"""
+
+# %%
 import numpy as np
 import pandas as pd
 import scipy.stats as stats
@@ -11,7 +17,7 @@ plt.style.use('seaborn-darkgrid')
 # %%
 CSV_PATH = '../../data/PANAS'
 NUM_OF_PARTICIPANTS = 20
-ALPHA = 0.5
+ALPHA = 0.05
 
 # %%
 smile_pos = []
