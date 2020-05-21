@@ -85,6 +85,12 @@ else:
 # %%
 """
 ## Multiple comparisons
+There are several ways to do a multiple comparision (as a post-hoc test).
+
+I use 'Tukey-HSD' and 't-test (with Bonferroni correction)' here.
+
+You can use whichever you like.
+
 """
 
 # %%
@@ -93,6 +99,7 @@ else:
 """
 
 # %%
+# https://qiita.com/TaigaU121/items/12c480f51a026ca9f333
 def tukey_hsd(ind, *args):
     data_arr = np.hstack( args ) 
 
@@ -125,11 +132,15 @@ print('sad vs smile: p={:.5f}'.format(p * 3))  # Bonferroni correction
 # %%
 """
 ## Visualization
+3 different data visualizations (Bar plot, Box plot, Violin plot)
 """
 
 # %%
 """
 ### Bar plot (average & standard error)
+pros: easy to compare multiple data (average)
+
+cons: less informative (average and standard error)
 """
 
 # %%
@@ -168,6 +179,11 @@ plt.show()
 # %%
 """
 ### Boxplot
+pros:
+more informative than bar plot
+
+cons:
+unable to understand the data distribution (box plot only show summary statistics)
 """
 
 # %%
@@ -187,6 +203,9 @@ plt.show()
 # %%
 """
 ### Violin plot
+pros: more informative than box plot (beacuse violin plot represents data distribution)
+
+cons:less popular (their meaning can be harder to grasp for many readers not familiar with the violin plot representation)### Violin plot
 """
 
 # %%
