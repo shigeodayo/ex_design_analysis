@@ -132,6 +132,13 @@ print('sad vs smile: p={:.5f}'.format(p * 3))  # Bonferroni correction
 """
 
 # %%
+# pros:
+# easy to compare multiple data (average)
+
+# cons:
+# less informative (average and standard error)
+
+
 # Convert array to numpy array
 smile_pos_np = np.array(smile_pos)
 neutral_pos_np = np.array(neutral_pos)
@@ -191,10 +198,16 @@ plt.show()
 
 # %%
 """
-### Boxplot
+### Box plot
 """
 
 # %%
+# pros:
+# more informative than bar plot
+
+# cons:
+# unable to understand the data distribution (box plot only show summary statistics)
+
 # error bar: min/max
 # box: 25/50(median)/75 percentile
 # circle: outlier (1.5 times bigger/smaller than box)
@@ -220,6 +233,12 @@ plt.show()
 """
 
 # %%
+# pros:
+# more informative than box plot (beacuse violin plot represents data distribution)
+
+# cons:
+# less popular (their meaning can be harder to grasp for many readers not familiar with the violin plot representation)
+
 # Similar to box plot, but also represents kernel density estimation (estimated distribution of data)
 fig = plt.figure(figsize=(12, 6))
 ax = fig.add_subplot(1, 2, 1)
