@@ -10,14 +10,18 @@ import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # %matplotlib inline
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/PANAS'
+CSV_PATH = '../../../data/incendiary_reflection'
 NUM_OF_PARTICIPANTS = 20
 ALPHA = 0.05
+OUTPUT_PATH = 'output/ir'
+if not os.path.isdir(OUTPUT_PATH):
+    os.makedirs(OUTPUT_PATH)
 
 # %%
 smile_pos = []
@@ -189,7 +193,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Negative affect', fontsize=14)
 ax.set_ylim(10, 50)
 
-plt.savefig('PANAS_bar.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'ir_bar.pdf'))
 plt.show()
 
 # %%
@@ -219,7 +223,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Negative affect', fontsize=14)
 ax.set_ylim(10, 50)
 
-plt.savefig('PANAS_boxplot.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'ir_box.pdf'))
 plt.show()
 
 # %%
@@ -248,7 +252,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Negative affect', fontsize=14)
 ax.set_ylim(10, 50)
 
-plt.savefig('PANAS_violinplot.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'ir_violin.pdf'))
 plt.show()
 
 
