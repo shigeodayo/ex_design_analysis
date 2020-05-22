@@ -15,14 +15,18 @@ import scipy.stats as stats
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # %matplotlib inline
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/creativity/n_idea.csv'
+CSV_PATH = '../../../data/smart_face/n_idea.csv'
 NUM_OF_PARTICIPANTS = 10
 ALPHA = 0.05
+OUTPUT_PATH = 'output/sf'
+if not os.path.isdir(OUTPUT_PATH):
+    os.makedirs(OUTPUT_PATH)
 
 # %%
 data = pd.read_csv(CSV_PATH)
@@ -173,7 +177,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Number of ideas', fontsize=14)
 ax.set_ylim(0, 18)
 
-plt.savefig('creativity_bar.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'sf_bar.pdf'))
 plt.show()
 
 # %%
@@ -197,7 +201,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Number of ideas', fontsize=14)
 ax.set_ylim(0, 18)
 
-plt.savefig('creativity_boxplot.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'sf_box.pdf'))
 plt.show()
 
 # %%
@@ -218,7 +222,7 @@ ax.set_xlabel('Facial expression', fontsize=14)
 ax.set_ylabel('Number of ideas', fontsize=14)
 ax.set_ylim(0, 18)
 
-plt.savefig('creativity_violinplot.pdf')
+plt.savefig(os.path.join(OUTPUT_PATH, 'sf_violin.pdf'))
 plt.show()
 
 # %%
