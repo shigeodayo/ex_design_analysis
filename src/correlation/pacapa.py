@@ -36,6 +36,10 @@ for i in range(NUM_OF_PARTICIPANTS):
 # print(len(x))
 
 # %%
+# Effect size of 'r'
+# small size : 0.1
+# medium size: 0.3
+# large size : 0.5
 slope, intercept, rvalue, pvalue, stderr = stats.linregress(x * NUM_OF_PARTICIPANTS, y)
 print('r={:.5f}, p={:.5f}'.format(rvalue, pvalue))
 
