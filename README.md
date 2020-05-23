@@ -1,5 +1,9 @@
 # Experimental Design and Analysis
 
+Sample programs for analyzing experimental data.
+
+The data in data folder is not the actual one used in the papers, but the samples.
+
 
 ## Environment
 - Python 3.7.7
