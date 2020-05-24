@@ -10,7 +10,7 @@ The data in data folder is not the actual data used in the papers, but the sampl
 
 ## How to run program
 
-Go to a directry where the program you want to run. Then, type below in the terminal to run the program.
+Go to a directry where the program you want to run in the terminal. Then, type below to run the program.
 
 ```shell
 $ python {PYTHON_FILE_NAME}
