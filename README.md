@@ -79,3 +79,7 @@ $ ipynb-py-convert hoge.ipynb hoge.py
 ```shell
 $ ipynb-py-convert hoge.py hoge.ipynb
 ```
+
+## Reference
+- Research Methods in Human-Computer Interaction
+https://dl.acm.org/doi/book/10.5555/1841406
