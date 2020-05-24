@@ -15,10 +15,10 @@ NUM_OF_PARTICIPANTS = 8
 
 # %%
 data = pd.read_csv(CSV_PATH, index_col=0)
-# data
+data
 
 # %%
-_, p = stats.ttest_rel(data['No Prediction'], data['With Predicition'])
+_, p = stats.ttest_rel(data['No Prediction'], data['With Prediction'])
 print('No Predicition vs With Predicition: p={:.5f}'.format(p))
 if p < ALPHA:
     print('Significant difference')
