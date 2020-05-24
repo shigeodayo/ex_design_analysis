@@ -2,7 +2,7 @@
 
 Sample programs for analyzing experimental data.
 
-The data in data folder is not the actual data used in the papers, but the samples.
+The csvs in the data folder are not the actual data used in the papers, but the samples.
 
 ## Environment
 - Python 3.7.7
@@ -10,7 +10,7 @@ The data in data folder is not the actual data used in the papers, but the sampl
 
 ## How to run program
 
-Go to a directry where the program you want to run in the terminal. Then, type below to run the program.
+Go to the directory where the program you want to run in the terminal. Then, type below to run the program.
 
 ```shell
 $ python {PYTHON_FILE_NAME}
@@ -18,14 +18,14 @@ $ python {PYTHON_FILE_NAME}
 (Note that you have to install the packages that are used in the program before running.)
 
 
-If you are `pipenv` user, you can run program with a command below.
+If you are `pipenv` user, you can run the program with the command below.
 ```shell
 $ pipenv run python {PYTHON_FILE_NAME}
 ```
 
 
 ## How to construct environment
-If you have constructed python environment (Python 3.7) yet, you don't need to do things below, but you must install the packages listed in Pipfile.
+If you have already constructed a python environment (Python 3.7), you don't need to do things below, but you must install the packages listed in Pipfile.
 
 ### 1. Install `pyenv`
 
