@@ -4,12 +4,28 @@ Sample programs for analyzing experimental data.
 
 The data in data folder is not the actual data used in the papers, but the samples.
 
-
 ## Environment
 - Python 3.7.7
 - pipenv, version 2018.11.26
 
-## How to construct environment (optional)
+## How to run program
+
+Go to a directry where the program you want to run. Then, type below in the terminal to run the program.
+
+```shell
+$ python {PYTHON_FILE_NAME}
+```
+(Note that you have to install the packages that are used in the program before running.)
+
+
+If you are `pipenv` user, you can run program with a command below.
+```shell
+$ pipenv run python {PYTHON_FILE_NAME}
+```
+
+
+## How to construct environment
+If you have constructed python environment (Python 3.7) yet, you don't need to do things below, but you must install the packages listed in Pipfile.
 
 ### 1. Install `pyenv`
 
@@ -41,40 +57,25 @@ $ pip install pipenv
 pipenv, version 2018.11.26
 ```
 
-## Install packages
+## Converting py/ipynb
+You can convert python/jupyter notebook with the commands below.
+Note that these commands can be used in the shell mode of `pipenv`.
 
-```shell
-$ pipenv install {PACKAGE}
-```
-
-## How to run python
-
-```shell
-$ pipenv run python {PYTHON_FILE_PATH} {ARGUMENTS}
-```
-
-## How to open jupyter notebook or lab
-
-```shell
-$ pipenv run jupyter {notebook or lab}
-```
-
-## Activate the virtual environment
+### Activate shell mode:
 ```shell
 $ pipenv shell
 ```
-
-## Deactivate the virtual environment
+### Deactivate shell mode:
 ```shell
 $ exit
 ```
 
-## How to convert jupyter notebook (.ipynb) to python (.py)
+### jupyter notebook (.ipynb) to python (.py)
 ```shell
 $ ipynb-py-convert hoge.ipynb hoge.py
 ```
 
-## How to convert python (.py) to jupyter notebook (.ipynb)
+### python (.py) to jupyter notebook (.ipynb)
 ```shell
 $ ipynb-py-convert hoge.py hoge.ipynb
 ```
