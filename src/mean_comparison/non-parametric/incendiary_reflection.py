@@ -16,7 +16,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../../data/incendiary_reflection'
+CSV_PATH = '../../../data/incendiary_reflection/mean_comparison'
 NUM_OF_PARTICIPANTS = 20
 ALPHA = 0.05
 OUTPUT_PATH = 'output/ir'
