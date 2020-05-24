@@ -15,9 +15,9 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/pacapa'
+CSV_PATH = '../../data/pacapa/study-2'
 NUM_OF_PARTICIPANTS = 12
-OUTPUT_PATH = 'output/pacapa'
+OUTPUT_PATH = 'output/pacapa/study-2'
 if not os.path.isdir(OUTPUT_PATH):
     os.makedirs(OUTPUT_PATH)
 columns = ['Square (1,1)', 'Square (1.25,0.75)', 'Square (0.75,1.25)',

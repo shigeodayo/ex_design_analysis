@@ -56,6 +56,9 @@ for i in range(NUM_OF_PARTICIPANTS):
 """
 
 # %%
+
+
+# %%
 # Compare groups
 _, p = stats.friedmanchisquare(smile_pos, neutral_pos, sad_pos)
 print('p={:.5f}'.format(p))
