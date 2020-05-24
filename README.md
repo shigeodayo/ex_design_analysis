@@ -2,7 +2,7 @@
 
 Sample programs for analyzing experimental data.
 
-The data in data folder is not the actual one used in the papers, but the samples.
+The data in data folder is not the actual data used in the papers, but the samples.
 
 
 ## Environment
