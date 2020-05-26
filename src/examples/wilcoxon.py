@@ -18,8 +18,9 @@ data = pd.read_csv(CSV_PATH, index_col=0)
 # data
 
 # %%
-_, p = stats.wilcoxon(data['No Prediction'], data['With Predicition'])
-print('No Predicition vs With Predicition: p={:.5f}'.format(p))
+_, p = stats.wilcoxon(data['No Prediction'], data['With Prediction'])
+
+print('No Prediction vs With Prediction: p={:.5f}'.format(p))
 if p < ALPHA:
     print('Significant difference')
 else:
