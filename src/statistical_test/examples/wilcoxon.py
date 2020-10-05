@@ -9,7 +9,7 @@ import pandas as pd
 import scipy.stats as stats
 
 # %%
-CSV_PATH = '../../data/examples/wilcoxon_ex_data.csv'
+CSV_PATH = '../../../data/statistical_test/examples/wilcoxon_ex_data.csv'
 ALPHA = 0.05
 NUM_OF_PARTICIPANTS = 8
 

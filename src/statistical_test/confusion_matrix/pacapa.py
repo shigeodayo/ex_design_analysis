@@ -15,7 +15,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/pacapa/study-2'
+CSV_PATH = '../../../data/statistical_test/pacapa/study-2'
 NUM_OF_PARTICIPANTS = 12
 OUTPUT_PATH = 'output/pacapa/study-2'
 if not os.path.isdir(OUTPUT_PATH):

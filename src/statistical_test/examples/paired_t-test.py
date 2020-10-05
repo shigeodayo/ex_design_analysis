@@ -10,13 +10,13 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 
 # %%
-CSV_PATH = '../../data/examples/paired_t_ex_data.csv'
+CSV_PATH = '../../../data/statistical_test/examples/paired_t_ex_data.csv'
 ALPHA = 0.05
 NUM_OF_PARTICIPANTS = 8
 
 # %%
 data = pd.read_csv(CSV_PATH, index_col=0)
-# data
+data
 
 # %%
 """
@@ -58,7 +58,11 @@ plt.show()# Mean
 """
 
 # %%
+data['With Prediction']
+
+# %%
 _, p = stats.ttest_rel(data['No Prediction'], data['With Prediction'])
+
 print('No Predicition vs With Predicition: p={:.5f}'.format(p))
 if p < ALPHA:
     print('Significant difference')

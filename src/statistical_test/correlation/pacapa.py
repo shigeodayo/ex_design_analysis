@@ -14,7 +14,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/pacapa/study-1'
+CSV_PATH = '../../../data/statistical_test/pacapa/study-1'
 NUM_OF_PARTICIPANTS = 18
 NUM_OF_TRIALS = 2
 OUTPUT_PATH = 'output/pacapa/study-1'

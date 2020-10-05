@@ -21,7 +21,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../../data/smart_face/n_idea.csv'
+CSV_PATH = '../../../../data/statistical_test/smart_face/n_idea.csv'
 NUM_OF_PARTICIPANTS = 10
 ALPHA = 0.05
 OUTPUT_PATH = 'output/sf'
