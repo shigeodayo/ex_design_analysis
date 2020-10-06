@@ -3,9 +3,9 @@
 *.ipynb
 *.pdf
 
-data/psychophysics/adjustment/*.csv
-data/psychophysics/constant/*.csv
-data/psychophysics/limit/*.csv
+data/psychophysics/adjustment/*
+data/psychophysics/constant/*
+data/psychophysics/limit/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
