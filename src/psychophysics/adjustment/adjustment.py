@@ -1,7 +1,9 @@
 import glob
 import csv
 
-CSV_PATH = '../../../data/psychophysics/adjustment'
+# You can try the 'method of adjustment' from the link below:
+# https://shigeodayo.github.io/PsychophysicsWebExp/index.html
+CSV_PATH = '../../../data/psychophysics/adjustment'  # Put the experimental data (CSVs) in this directory.
 
 def main():
     answer_csvs = glob.glob(CSV_PATH + '/*.csv')

@@ -13,7 +13,9 @@ import csv
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../../data/psychophysics/constant'
+# You can try the 'method of constant' from the link below:
+# https://shigeodayo.github.io/PsychophysicsWebExp/index.html
+CSV_PATH = '../../../data/psychophysics/constant'  # Put the experimental data (CSVs) in this directory.
 OUTPUT_PATH = 'output/'
 if not os.path.isdir(OUTPUT_PATH):
     os.makedirs(OUTPUT_PATH)

@@ -1,7 +1,9 @@
 import glob
 import csv
 
-CSV_PATH = '../../../data/psychophysics/limit'
+# You can try the 'method of limit' from the link below:
+# https://shigeodayo.github.io/PsychophysicsWebExp/index.html
+CSV_PATH = '../../../data/psychophysics/limit'  # Put the experimental data (CSVs) in this directory.
 HALF_STEP = 0.5  # the half of the step to increase/decrease the lightness, the unit is '%'
 
 def main():
