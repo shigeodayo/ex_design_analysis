@@ -14,7 +14,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/examples/correlation_ex_data.csv'
+CSV_PATH = '../../../data/statistical_test/examples/correlation_ex_data.csv'
 OUTPUT_PATH = 'output/'
 if not os.path.isdir(OUTPUT_PATH):
     os.makedirs(OUTPUT_PATH)
@@ -22,7 +22,7 @@ if not os.path.isdir(OUTPUT_PATH):
 # %%
 data = pd.read_csv(CSV_PATH, index_col=0)
 x = data['Computer Experience']
-# data
+data
 
 
 # %%

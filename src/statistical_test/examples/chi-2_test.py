@@ -8,11 +8,11 @@ import pandas as pd
 import scipy.stats as stats
 
 # %%
-CSV_PATH = '../../data/examples/chi-2_ex_data.csv'
+CSV_PATH = '../../../data/statistical_test/examples/chi-2_ex_data.csv'
 
 # %%
 data = pd.read_csv(CSV_PATH, index_col=0)
-# data
+data
 
 # %%
 result = stats.chi2_contingency(data, correction=False)

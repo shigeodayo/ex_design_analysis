@@ -1,12 +1,19 @@
 # %%
 """
-# Freidman test
+# One-way ANOVA (and normality / sphericity check)
+
+To use ANOVA, you need to make sure that the data fulfill these requirements:
+- Normality
+- Homogeneity of variances / SphericityTo use ANOVA, you need to make sure that the data fulfill these requirements:
+- Normality
+- Homogeneity of variances / Sphericity
 """
 
 # %%
 import numpy as np
 import pandas as pd
 import scipy.stats as stats
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
@@ -15,7 +22,7 @@ import os
 plt.style.use('seaborn-darkgrid')
 
 # %%
-CSV_PATH = '../../data/examples/friedman_ex_data.csv'
+CSV_PATH = '../../../data/statistical_test/examples/one-way_ANOVA_ex_data.csv'
 ALPHA = 0.05
 NUM_OF_PARTICIPANTS = 8
 OUTPUT_PATH = 'output/'
@@ -24,39 +31,109 @@ if not os.path.isdir(OUTPUT_PATH):
 
 # %%
 data = pd.read_csv(CSV_PATH, index_col=0)
-datadata = pd.read_csv(CSV_PATH, index_col=0)
-# data
-
-# %%
-# Compare groups
-_, p = stats.friedmanchisquare(data['Standard'], data['Prediction'], data['Speech'])
-print('p={:.5f}'.format(p))
-
-if p > ALPHA:
-    print('Same distributions')
-    exit()
-else:
-    print('Different distributions. You can do a post-hoc test.')# Compare groups
+data
 
 # %%
 """
-## Post-hoc test (Wilcoxon test)
-P-value needs to be corrected to avoid multiplicity of statistical tests.
+## Normality check
+"""
 
-I use Bonferroni correction here.
+# %%
+_, p = stats.shapiro(data['Standard'])
+
+print('p={:.5f}'.format(p))
+if p > ALPHA:
+    print('Normality check: passed')
+else:
+    print('Normality check: rejected')
+
+_, p = stats.shapiro(data['Prediction'])
+print('p={:.5f}'.format(p))
+if p > ALPHA:
+    print('Normality check: passed')
+else:
+    print('Normality check: rejected')
+
+_, p = stats.shapiro(data['Speech'])
+print('p={:.5f}'.format(p))
+if p > ALPHA:
+    print('Normality check: passed')
+else:
+    print('Normality check: rejected')
+
+# %%
+"""
+## Homogeneity of variances / Sphericity check
+"""
+
+# %%
+_, p = stats.bartlett(data['Standard'], data['Prediction'], data['Speech'])
+print('p={:.5f}'.format(p))
+if p > ALPHA:
+    print('Sphericity check: passed')
+else:
+    print('Sphericity check: rejected')
+
+# %%
+"""
+## One-way ANOVA
+"""
+
+# %%
+_, p = stats.f_oneway(data['Standard'], data['Prediction'], data['Speech'])
+print('ANOVA: p={:.5f}'.format(p))
+
+if p > ALPHA:
+    print('Same distributions')
+    # exit()
+else:
+    print('Different distributions. You can do a post-hoc test.')
+
+# %%
+"""
+## Multiple comparisons
+No significant difference is found on this data, thus no need to conduct a post-hoc test. 
+
+But, as an example, I’ll show you a post-hoc test with this data.
+"""
+
+# %%
+"""
+### Tukey-HSD
+"""
+
+# %%
+# https://qiita.com/TaigaU121/items/12c480f51a026ca9f333
+def tukey_hsd(ind, *args):
+    data_arr = np.hstack( args ) 
+
+    ind_arr = np.array([])
+    for x in range(len(args)):
+        ind_arr = np.append(ind_arr, np.repeat(ind[x], len(args[x]))) 
+    print(pairwise_tukeyhsd(data_arr,ind_arr))
+
+# %%
+tukey_hsd(['Standard', 'Prediction', 'Speech'], data['Standard'], data['Prediction'], data['Speech'])
+
+# %%
+"""
+### t-test (with Bonferroni correction)
+t-test can be used for multiple comparisions, but p-value needs to be corrected to avoid multiplicity of statistical tests.
+
+i.e. if you done a statistical test with 95% confidence 3 times, the confidence of the results is 0.95 x 0.95 x 0.95 = 0.857375.
 """
 
 # %%
 # Standard vs Prediction
-_, p = stats.wilcoxon(data['Standard'], data['Prediction'])
+_, p = stats.ttest_rel(data['Standard'], data['Prediction'])
 print('Standard vs Prediction: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # Prediction vs Speech
-_, p = stats.wilcoxon(data['Prediction'], data['Speech'])
+_, p = stats.ttest_rel(data['Prediction'], data['Speech'])
 print('Prediction vs Speech: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # Speech vs Standard
-_, p = stats.wilcoxon(data['Speech'], data['Standard'])
+_, p = stats.ttest_rel(data['Speech'], data['Standard'])
 print('Speech vs Standard: p={:.5f}'.format(p * 3))  # Bonferroni correction
 
 # %%
@@ -101,9 +178,9 @@ ax = fig.add_subplot(1, 1, 1)
 ax.bar(x_position, y, yerr=e, tick_label=x, error_kw=error_bar_set, color=['salmon', 'palegreen', 'aqua'])
 ax.set_xlabel('Conditions', fontsize=14)
 ax.set_ylabel('Performance', fontsize=14)
-ax.set_ylim(1, 5)
+ax.set_ylim(0, 350)
 
-plt.savefig(os.path.join(OUTPUT_PATH, 'friedman_bar.pdf'))
+plt.savefig(os.path.join(OUTPUT_PATH, 'ANOVA_bar.pdf'))
 plt.show()
 
 # %%
@@ -125,9 +202,9 @@ ax = fig.add_subplot(1, 1, 1)
 ax.boxplot([data['Standard'], data['Prediction'], data['Speech']], labels=['Standard', 'Prediction', 'Speech'])
 ax.set_xlabel('Conditions', fontsize=14)
 ax.set_ylabel('Performance', fontsize=14)
-ax.set_ylim(1, 5)
+ax.set_ylim(0, 370)
 
-plt.savefig(os.path.join(OUTPUT_PATH, 'friedmanfriedman_box.pdf'))
+plt.savefig(os.path.join(OUTPUT_PATH, 'ANOVA_box.pdf'))
 plt.show()
 
 # %%
@@ -135,7 +212,7 @@ plt.show()
 ### Violin plot
 pros: more informative than box plot (beacuse violin plot represents data distribution)
 
-cons:less popular (their meaning can be harder to grasp for many readers not familiar with the violin plot representation)
+cons:less popular (their meaning can be harder to grasp for many readers not familiar with the violin plot representation)### Violin plot
 """
 
 # %%
@@ -146,9 +223,9 @@ sns.violinplot(data=[data['Standard'], data['Prediction'], data['Speech']], pale
 ax.set_xticklabels(['Standard', 'Prediction', 'Speech'])
 ax.set_xlabel('Conditions', fontsize=14)
 ax.set_ylabel('Performance', fontsize=14)
-ax.set_ylim(0, 5)
+ax.set_ylim(0, 400)
 
-plt.savefig(os.path.join(OUTPUT_PATH, 'friedmanfriedman_violin.pdf'))
+plt.savefig(os.path.join(OUTPUT_PATH, 'ANOVA_violin.pdf'))
 plt.show()
 
 # %%

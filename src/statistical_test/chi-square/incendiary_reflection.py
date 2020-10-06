@@ -10,7 +10,7 @@ import scipy.stats as stats
 import os
 
 # %%
-CSV_PATH = '../../data/incendiary_reflection/chi-square/classified_face.csv'
+CSV_PATH = '../../../data/statistical_test/incendiary_reflection/chi-square/classified_face.csv'
 NUM_OF_CLASSIFIED = 200
 ALPHA = 0.05
 columns = ['smiley face mirror', 'sad face mirror']
@@ -39,5 +39,8 @@ print(cross_data)
 # %%
 result = stats.chi2_contingency(cross_data, correction=False)
 print('chi^2({},N={})={:.2f}, p={:.5f}'.format(result[2], 20, result[0], result[1]))
+
+# %%
+
 
 # %%
