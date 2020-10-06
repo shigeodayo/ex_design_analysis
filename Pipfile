@@ -15,6 +15,7 @@ seaborn = "*"
 jupyter = "*"
 ipynb-py-convert = "*"
 statsmodels = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.7"
