@@ -18,7 +18,9 @@ def main():
         part_avg_ans[i] = (part_avg_ans_up[i] + part_avg_ans_down[i]) / 2
         print('{} (avg): {:.2f} (up) - {:.2f} (down)'.format(id, part_avg_ans_up[i], part_avg_ans_down[i]))
 
+    print('------------------------------------------------')
     print('PSE = {:.2f}%'.format(sum(part_avg_ans) / len(part_avg_ans)))
+    print('------------------------------------------------')
 
 
 def get_avg_ans(answer_csv):
