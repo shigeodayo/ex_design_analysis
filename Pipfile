@@ -16,7 +16,7 @@ jupyter = "*"
 ipynb-py-convert = "*"
 statsmodels = "*"
 scikit-learn = "*"
-pymc3 = "*"
+pymc3 = "==3.10.0"
 nbstripout = "*"
 
 [requires]

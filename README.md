@@ -117,10 +117,10 @@ You can open Jupyter Notebook (ipynb file) in github with Google Colaboratory.
 2. Replace `github.com` with `colab.research.google.com/github`
 3. Then, save a copy on your drive.
 
-e.g., 
-https://github.com/shigeodayo/ex_design_analysis/blob/bayes/src/bayes/examples/Monty_Hall_problem.ipynb
+e.g.,
+https://github.com/shigeodayo/ex_design_analysis/blob/master/src/bayes/examples/Monty_Hall_problem.ipynb
 ->
-https://colab.research.google.com/github/shigeodayo/ex_design_analysis/blob/bayes/src/bayes/examples/Monty_Hall_problem.ipynb
+https://colab.research.google.com/github/shigeodayo/ex_design_analysis/blob/master/src/bayes/examples/Monty_Hall_problem.ipynb
 
 Also see:
 https://sekailab.com/wp/2018/05/24/colaboratory-github-jupyter-notebook/
