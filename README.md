@@ -129,6 +129,8 @@ Note taht `nbstripout` package is used to delete meta information in Jupyter Not
 The information is automatically deleted when you commit an ipynb file.
 Thus, you don't need to worry about the file size of ipynb file (but we cannot check the diffs).
 
+Also see:
+https://qiita.com/ctyl/items/bbc04e0b0bd4557d54a6
 
 ## Reference
 - Research Methods in Human-Computer Interaction
