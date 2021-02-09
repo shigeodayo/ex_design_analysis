@@ -115,6 +115,7 @@ You can open Jupyter Notebook (ipynb file) in github with Google Colaboratory.
 
 1. View Jupyter Notebook in github on your browser.
 2. Replace `github.com` with `colab.research.google.com/github`
+3. Then, save a copy on your drive.
 
 e.g., 
 https://github.com/shigeodayo/ex_design_analysis/blob/bayes/src/bayes/examples/Monty_Hall_problem.ipynb
