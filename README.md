@@ -5,9 +5,8 @@ Sample programs for analyzing experimental data.
 The csvs in the data folder are not the actual data used in the papers, but the samples.
 
 ## Environment
-- Python 3.7.7
-- pipenv, version 2018.11.26
-
+- Python 3.8.1
+- pipenv, version 2020.8.13
 ## How to run program
 
 Go to the directory where the program you want to run in the terminal. Then, type below to run the program.
@@ -38,15 +37,15 @@ $ pyenv --version
 pyenv 1.2.17
 ```
 
-### 2. Install `Python 3.7.7` via pyenv
+### 2. Install `Python 3.8.1` via pyenv
 
 ```shell
-$ pyenv install 3.7.7
-$ pyenv local 3.7.7
+$ pyenv install 3.8.1
+$ pyenv local 3.8.1
 $ python --version
-Python 3.7.7
+Python 3.8.1
 $ pip --version
-pip 19.2.3 from /Users/{USERNAME}/.pyenv/versions/3.7.7/lib/python3.7/site-packages/pip (python 3.7)
+pip 21.0.1 from /Users/{USERNAME}/.pyenv/versions/3.8.1/lib/python3.8/site-packages/pip (python 3.8)
 ```
 
 ### 3. Install `pipenv`
@@ -54,7 +53,7 @@ pip 19.2.3 from /Users/{USERNAME}/.pyenv/versions/3.7.7/lib/python3.7/site-packa
 ```shell
 $ pip install --upgrade pip
 $ pip install pipenv
-pipenv, version 2018.11.26
+pipenv, version 2020.8.13
 ```
 
 ## Converting py/ipynb
