@@ -24,7 +24,7 @@ $ pipenv run python {PYTHON_FILE_NAME}
 
 
 ## How to construct environment
-If you have already constructed a python environment (Python 3.7), you don't need to do things below, but you must install the packages listed in Pipfile.
+If you have already constructed a python environment (Python 3.8), you don't need to do things below, but you must install the packages listed in Pipfile.
 
 ### 1. Install `pyenv`
 
@@ -56,9 +56,21 @@ $ pip install pipenv
 pipenv, version 2020.8.13
 ```
 
-## Converting py/ipynb
-You can convert python/jupyter notebook with the commands below.
-Note that these commands can be used in the shell mode of `pipenv`.
+## Pipenv commands
+### Create Pipfile and Pipfile.lock in the current directory or install packages written in Pipfile if Pipfile already exists.
+```shell
+$ pipenv install
+```
+
+### Install package in your virtual environment
+```shell
+$ pipenv install {package}
+```
+
+### Unnstall package in your virtual environment
+```shell
+$ pipenv uninstall {package}
+```
 
 ### Activate shell mode:
 ```shell
@@ -68,6 +80,25 @@ $ pipenv shell
 ```shell
 $ exit
 ```
+### Run command in your virtual environment
+```shell
+$ pipenv run {command}
+```
+
+### Remove virtual environment
+```shell
+$ pipenv --rm
+```
+
+### Confirm the path of virtual environment
+```shell
+$ pipenv --venv
+```
+
+
+## Converting py/ipynb
+You can convert python/jupyter notebook with the commands below.
+Note that these commands can be used in the shell mode of `pipenv`.
 
 ### jupyter notebook (.ipynb) to python (.py)
 ```shell
@@ -78,6 +109,25 @@ $ ipynb-py-convert hoge.ipynb hoge.py
 ```shell
 $ ipynb-py-convert hoge.py hoge.ipynb
 ```
+
+## Opening Jupyter Notebook with Google Colabratory
+You can open Jupyter Notebook (ipynb file) in github with Google Colaboratory.
+
+1. View Jupyter Notebook in github on your browser.
+2. Replace `github.com` with `colab.research.google.com/github`
+
+e.g., 
+https://github.com/shigeodayo/ex_design_analysis/blob/bayes/src/bayes/examples/Monty_Hall_problem.ipynb
+->
+https://colab.research.google.com/github/shigeodayo/ex_design_analysis/blob/bayes/src/bayes/examples/Monty_Hall_problem.ipynb
+
+Also see:
+https://sekailab.com/wp/2018/05/24/colaboratory-github-jupyter-notebook/
+
+Note taht `nbstripout` package is used to delete meta information in Jupyter Notebook.
+The information is automatically deleted when you commit an ipynb file.
+Thus, you don't need to worry about the file size of ipynb file (but we cannot check the diffs).
+
 
 ## Reference
 - Research Methods in Human-Computer Interaction
