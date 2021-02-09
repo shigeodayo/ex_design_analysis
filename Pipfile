@@ -16,6 +16,8 @@ jupyter = "*"
 ipynb-py-convert = "*"
 statsmodels = "*"
 scikit-learn = "*"
+pymc3 = "*"
+nbstripout = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8.1"
