@@ -133,5 +133,9 @@ Also see:
 https://qiita.com/ctyl/items/bbc04e0b0bd4557d54a6
 
 ## Reference
+### src/statistical_test
 - Research Methods in Human-Computer Interaction
 https://dl.acm.org/doi/book/10.5555/1841406
+
+### src/bayes
+- はじめての統計データ分析 ―ベイズ的〈ポストp値時代〉の統計学― https://www.asakura.co.jp/G_12.php?isbn=ISBN978-4-254-12214-5
