@@ -5,6 +5,7 @@
 data/psychophysics/adjustment/*
 data/psychophysics/constant/*
 data/psychophysics/limit/*
+data/statistical_test/csv_generator.ipynb
 
 src/bayes/test/
 
