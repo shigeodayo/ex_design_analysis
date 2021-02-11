@@ -1,13 +1,12 @@
 .DS_Store
 .vscode/
-# *.ipynb
 *.pdf
 
 data/psychophysics/adjustment/*
 data/psychophysics/constant/*
 data/psychophysics/limit/*
 
-src/bayes/examples/output/
+src/bayes/test/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
