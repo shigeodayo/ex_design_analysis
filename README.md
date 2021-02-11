@@ -1,8 +1,49 @@
 # Experimental Design and Analysis
+The programs in this repository were used for the workshop of experimental design and analysis in Cyber Interface Laboratory at The University of Tokyo.
+## src/statistical_test
+Sample programs for statistical analysis and visualizations.
+- mean comparison
+  - two samples
+    - non-parametric (wilcoxon test)
+    - parametric (paired_t-test)
+  - multiple samples
+    - non-parametric (friedman)
+    - parametric (one-way ANOVA)
+- proportion (chi-square test)
+- correlation
 
-Sample programs for analyzing experimental data.
+The experimental data used in those programs are listed in the following book:
+- Research Methods in Human-Computer Interaction
+https://dl.acm.org/doi/book/10.5555/1841406
 
-The csvs in the data folder are not the actual data used in the papers, but the samples.
+
+In `example` directory, there are some programs that perform the same analysis as experiments described in previously published papers.
+
+Note that the experimental data used the analysis above (in the `data/statistical_test/examples` folder) are not the actual data used in the papers, but just the samples.
+
+### ToDo
+- non-paired test (mean comparison)
+- effect size
+- post analysis (残差分析) for chi-square test
+
+## src/psychophysics
+The programs for anlayzing data of psychophysics.
+- 調整法（method of adjustment）
+- 極限法（method of limit）
+- 恒常法（method of constant  stimuli）
+
+Go to the following web site to try simple psychophysics experiment.
+https://shigeodayo.github.io/PsychophysicsWebExp/
+
+The data obtained through the experiment can be analyzed by the programs in this directory.
+
+Please check `README.md` of the following web site for the format of the experimental data.
+https://github.com/shigeodayo/PsychophysicsWebExp
+## src/bayes
+The programs for Bayesian statistical analysis, which is different from traditional statistical methods that make decisions based on p-valus.
+
+The programs are based on the following book but reimplemented in `pymc3` (originally `R` and `stan`).
+- はじめての統計データ分析 ―ベイズ的〈ポストp値時代〉の統計学― https://www.asakura.co.jp/G_12.php?isbn=ISBN978-4-254-12214-5
 
 ## Environment
 - Python 3.8.1
@@ -131,11 +172,3 @@ Thus, you don't need to worry about the file size of ipynb file (but we cannot c
 
 Also see:
 https://qiita.com/ctyl/items/bbc04e0b0bd4557d54a6
-
-## Reference
-### src/statistical_test
-- Research Methods in Human-Computer Interaction
-https://dl.acm.org/doi/book/10.5555/1841406
-
-### src/bayes
-- はじめての統計データ分析 ―ベイズ的〈ポストp値時代〉の統計学― https://www.asakura.co.jp/G_12.php?isbn=ISBN978-4-254-12214-5
