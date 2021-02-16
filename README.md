@@ -45,6 +45,7 @@ The programs for Bayesian statistical analysis, which is different from traditio
 The programs and experimental data are based on the following book but the programs were reimplemented in `pymc3` (originally `R` and `stan`).
 - はじめての統計データ分析 ―ベイズ的〈ポストp値時代〉の統計学― https://www.asakura.co.jp/G_12.php?isbn=ISBN978-4-254-12214-5
 
+Currently, the following programs for analysis are available.
 - Analysis of mean
   - two (alternative of t-test)
     - independent
