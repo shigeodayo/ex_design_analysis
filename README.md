@@ -40,10 +40,26 @@ The data obtained through the experiment can be analyzed by the programs in this
 Please check `README.md` of the following web site for the format of the experimental data.
 https://github.com/shigeodayo/PsychophysicsWebExp
 ## src/bayes
-The programs for Bayesian statistical analysis, which is different from traditional statistical methods that make decisions based on p-valus.
+The programs for Bayesian statistical analysis, which is different from traditional statistical methods that make decisions based on p-values.
 
-The programs are based on the following book but reimplemented in `pymc3` (originally `R` and `stan`).
+The programs and experimental data are based on the following book but the programs were reimplemented in `pymc3` (originally `R` and `stan`).
 - はじめての統計データ分析 ―ベイズ的〈ポストp値時代〉の統計学― https://www.asakura.co.jp/G_12.php?isbn=ISBN978-4-254-12214-5
+
+- Analysis of mean
+  - two (alternative of t-test)
+    - independent
+    - paired
+  - mutiple (alternative of ANOVA)
+    - one-factor (independent)
+    - two-factor (independent)
+- Analysis of proportion (alternative of z-test and chi-square test)
+  - independent
+    - 2 x 2
+    - g x 2
+  - paired
+    - 2 x 2
+    - a x b
+
 
 ## Environment
 - Python 3.8.1
